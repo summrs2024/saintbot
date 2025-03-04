@@ -1,0 +1,740 @@
+{
+    "modules": {
+        "configuration": [
+            {
+                "name": "autoresponder",
+                "aliases": [
+                    "ar"
+                ],
+                "description": "Set up automatic replies to messages that match a trigger",
+                "syntax": "autoresponder <subcommands> (args)",
+                "example": "autoresponder remove hello",
+                "permissions": "MANAGE_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "autoresponder add",
+                "description": "Create an automated response",
+                "syntax": "autoresponder add <trigger> <response>",
+                "example": "autoresponder add hello sup there!",
+                "permissions": "MANAGE_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "autoresponder remove",
+                "description": "Remove an automated response",
+                "syntax": "autoresponder remove <trigger>",
+                "example": "autoresponder remove hello",
+                "permissions": "MANAGE_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "autoresponder list",
+                "description": "List all auto-responses",
+                "syntax": "autoresponder list",
+                "example": "autoresponder list",
+                "permissions": "MANAGE_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "autoresponder clear",
+                "description": "Clear all auto-responses",
+                "syntax": "autoresponder clear",
+                "example": "autoresponder clear",
+                "permissions": "MANAGE_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "autorole",
+                "aliases": [
+                    "none"
+                ],
+                "description": "Set up automatic role assign on member join",
+                "syntax": "autorole <subcommand> <args>",
+                "example": "autorole add @role",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "autorole add",
+                "description": "Adds a autorole and assigns on join to member",
+                "syntax": "autorole add <role>",
+                "example": "autorole add @role",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "autorole remove",
+                "description": "Removes a autorole and stops assigning on join",
+                "syntax": "autorole remove <role>",
+                "example": "autorole remove @role",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "autorole view",
+                "description": "View a list of every auto role",
+                "syntax": "autorole view",
+                "example": "autorole view",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "chatfilter",
+                "aliases": [
+                    "cf"
+                ],
+                "description": "Manage the chat filter settings for the guild",
+                "syntax": "chatfilter <subcommand> (args)",
+                "example": "chatfilter add bleed",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "chatfilter add",
+                "description": "Add a word to the chat filter",
+                "syntax": "chatfilter add <word>",
+                "example": "chatfilter add Fart",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "chatfilter remove",
+                "description": "Remove a word from the chat filter",
+                "syntax": "chatfilter remove <word>",
+                "example": "chatfilter remove bleed",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "chatfilter list",
+                "description": "List all words in the chat filter",
+                "syntax": "chatfilter list",
+                "example": "chatfilter list",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "chatfilter clear",
+                "description": "Clear all words from the chat filter",
+                "syntax": "chatfilter clear",
+                "example": "chatfilter clear",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "prefix",
+                "aliases": [
+                    "setprefix"
+                ],
+                "description": "Manage the bot's prefix within your server",
+                "syntax": "prefix <subcommand> (args)",
+                "example": "prefix set ,",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "prefix set",
+                "description": "Set a new prefix for the bot",
+                "syntax": "prefix set <new prefix>",
+                "example": "prefix set !",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "prefix reset",
+                "description": "Reset the prefix to the default",
+                "syntax": "prefix reset",
+                "example": "prefix reset",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "selfprefix",
+                "aliases": [
+                    "setselfprefix"
+                ],
+                "description": "Manage your personal prefix for the bot",
+                "syntax": "selfprefix <subcommand> (args)",
+                "example": "selfprefix set !",
+                "permissions": "SEND_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "selfprefix set",
+                "description": "Set a new personal prefix for the bot",
+                "syntax": "selfprefix set <new prefix>",
+                "example": "selfprefix set !",
+                "permissions": "SEND_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "selfprefix reset",
+                "description": "Reset your personal prefix to the default",
+                "syntax": "selfprefix reset",
+                "example": "selfprefix reset",
+                "permissions": "SEND_MESSAGES",
+                "module": "configuration"
+            },
+            {
+                "name": "welcome",
+                "aliases": [
+                    "greet"
+                ],
+                "description": "Manage welcome messages for new members",
+                "syntax": "welcome <subcommand> (args)",
+                "example": "welcome view #joiner",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "welcome add",
+                "description": "Add a welcome message to a channel",
+                "syntax": "welcome add <#channel> [message|embed script]",
+                "example": "welcome add #gate hi {user.mention}",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "welcome remove",
+                "description": "Remove a welcome message from a channel",
+                "syntax": "welcome remove <#channel>",
+                "example": "welcome remove #gate",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "welcome list",
+                "description": "List all welcome messages",
+                "syntax": "welcome list",
+                "example": "welcome list",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "welcome clear",
+                "description": "Clear all welcome messages",
+                "syntax": "welcome clear",
+                "example": "welcome clear",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            },
+            {
+                "name": "welcome view",
+                "description": "View a welcome channel's set message",
+                "syntax": "welcome view <#channel>",
+                "example": "welcome view #joiner",
+                "permissions": "MANAGE_GUILD",
+                "module": "configuration"
+            }
+        ],
+        "moderation": [
+            {
+                "name": "raid",
+                "description": "Handles a raid by removing users who joined within a specified time window",
+                "syntax": "raid (time) (kick or ban) <reason>",
+                "example": "raid 5m ban Suspected raid",
+                "permissions": "MANAGE_GUILD",
+                "module": "moderation"
+            }
+        ],
+        "information": [
+            {
+                "name": "avatar",
+                "aliases": [
+                    "av"
+                ],
+                "description": "Get avatar of a member or yourself",
+                "syntax": "avatar <user>",
+                "example": "avatar @jordan",
+                "module": "information"
+            },
+            {
+                "name": "boosts",
+                "aliases": [
+                    "none"
+                ],
+                "description": "Shows the server's boosts.",
+                "syntax": "boosts",
+                "example": "boosts",
+                "module": "information"
+            },
+            {
+                "name": "inviteinfo",
+                "aliases": [
+                    "ii"
+                ],
+                "description": "Fetches information about the provided invite link.",
+                "syntax": "inviteinfo <invite>",
+                "example": "inviteinfo saint",
+                "module": "information"
+            },
+            {
+                "name": "membercount",
+                "aliases": [
+                    "mc",
+                    "members"
+                ],
+                "description": "View server member count",
+                "syntax": "membercount",
+                "example": "membercount",
+                "module": "information"
+            },
+            {
+                "name": "roles",
+                "aliases": [
+                    "rolelist"
+                ],
+                "description": "Displays a list of all roles in the server",
+                "syntax": "roles",
+                "example": "roles",
+                "module": "information"
+            }
+        ],
+        "utility": [
+            {
+                "name": "compress",
+                "description": "Compress an image attachment",
+                "syntax": "compress <attachment> (quality)",
+                "example": "compress saint.png 50",
+                "permissions": "N/A",
+                "module": "utility"
+            },
+            {
+                "name": "emoji",
+                "description": "Returns a large emoji or server emote",
+                "syntax": "emoji <emoji>",
+                "example": "emoji :smile: or emoji <:custom_emoji_name:123456789>",
+                "permissions": "SEND_MESSAGES",
+                "module": "utility"
+            },
+            {
+                "name": "invert",
+                "description": "Invert the colors of an image attachment",
+                "syntax": "invert <attachment>",
+                "example": "invert saint.png",
+                "permissions": "N/A",
+                "module": "utility"
+            }
+        ],
+        "Information": [
+            {
+                "name": "serverinfo",
+                "aliases": [
+                    "guildinfo",
+                    "si",
+                    "gi"
+                ],
+                "description": "Fetches information about the server.",
+                "permissions": "Everyone",
+                "module": "Information"
+            },
+            {
+                "name": "userinfo",
+                "aliases": [
+                    "whois",
+                    "uinfo",
+                    "info",
+                    "ui"
+                ],
+                "description": "Fetches information about a user.",
+                "permissions": "Everyone",
+                "module": "Information"
+            }
+        ],
+        "media": [
+            {
+                "name": "tiktok-download",
+                "aliases": [
+                    "tiktok"
+                ],
+                "description": "Download and repost a TikTok video along with its stats",
+                "syntax": "tiktok-download <tiktok url>",
+                "example": "tiktok https://www.tiktok.com/@example/video/1234567890",
+                "permissions": "Everyone",
+                "module": "media"
+            }
+        ]
+    },
+    "all": [
+        {
+            "name": "autoresponder",
+            "aliases": [
+                "ar"
+            ],
+            "description": "Set up automatic replies to messages that match a trigger",
+            "syntax": "autoresponder <subcommands> (args)",
+            "example": "autoresponder remove hello",
+            "permissions": "MANAGE_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "autoresponder add",
+            "description": "Create an automated response",
+            "syntax": "autoresponder add <trigger> <response>",
+            "example": "autoresponder add hello sup there!",
+            "permissions": "MANAGE_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "autoresponder remove",
+            "description": "Remove an automated response",
+            "syntax": "autoresponder remove <trigger>",
+            "example": "autoresponder remove hello",
+            "permissions": "MANAGE_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "autoresponder list",
+            "description": "List all auto-responses",
+            "syntax": "autoresponder list",
+            "example": "autoresponder list",
+            "permissions": "MANAGE_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "autoresponder clear",
+            "description": "Clear all auto-responses",
+            "syntax": "autoresponder clear",
+            "example": "autoresponder clear",
+            "permissions": "MANAGE_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "autorole",
+            "aliases": [
+                "none"
+            ],
+            "description": "Set up automatic role assign on member join",
+            "syntax": "autorole <subcommand> <args>",
+            "example": "autorole add @role",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "autorole add",
+            "description": "Adds a autorole and assigns on join to member",
+            "syntax": "autorole add <role>",
+            "example": "autorole add @role",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "autorole remove",
+            "description": "Removes a autorole and stops assigning on join",
+            "syntax": "autorole remove <role>",
+            "example": "autorole remove @role",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "autorole view",
+            "description": "View a list of every auto role",
+            "syntax": "autorole view",
+            "example": "autorole view",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "chatfilter",
+            "aliases": [
+                "cf"
+            ],
+            "description": "Manage the chat filter settings for the guild",
+            "syntax": "chatfilter <subcommand> (args)",
+            "example": "chatfilter add bleed",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "chatfilter add",
+            "description": "Add a word to the chat filter",
+            "syntax": "chatfilter add <word>",
+            "example": "chatfilter add Fart",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "chatfilter remove",
+            "description": "Remove a word from the chat filter",
+            "syntax": "chatfilter remove <word>",
+            "example": "chatfilter remove bleed",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "chatfilter list",
+            "description": "List all words in the chat filter",
+            "syntax": "chatfilter list",
+            "example": "chatfilter list",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "chatfilter clear",
+            "description": "Clear all words from the chat filter",
+            "syntax": "chatfilter clear",
+            "example": "chatfilter clear",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "prefix",
+            "aliases": [
+                "setprefix"
+            ],
+            "description": "Manage the bot's prefix within your server",
+            "syntax": "prefix <subcommand> (args)",
+            "example": "prefix set ,",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "prefix set",
+            "description": "Set a new prefix for the bot",
+            "syntax": "prefix set <new prefix>",
+            "example": "prefix set !",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "prefix reset",
+            "description": "Reset the prefix to the default",
+            "syntax": "prefix reset",
+            "example": "prefix reset",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "raid",
+            "description": "Handles a raid by removing users who joined within a specified time window",
+            "syntax": "raid (time) (kick or ban) <reason>",
+            "example": "raid 5m ban Suspected raid",
+            "permissions": "MANAGE_GUILD",
+            "module": "moderation"
+        },
+        {
+            "name": "selfprefix",
+            "aliases": [
+                "setselfprefix"
+            ],
+            "description": "Manage your personal prefix for the bot",
+            "syntax": "selfprefix <subcommand> (args)",
+            "example": "selfprefix set !",
+            "permissions": "SEND_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "selfprefix set",
+            "description": "Set a new personal prefix for the bot",
+            "syntax": "selfprefix set <new prefix>",
+            "example": "selfprefix set !",
+            "permissions": "SEND_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "selfprefix reset",
+            "description": "Reset your personal prefix to the default",
+            "syntax": "selfprefix reset",
+            "example": "selfprefix reset",
+            "permissions": "SEND_MESSAGES",
+            "module": "configuration"
+        },
+        {
+            "name": "welcome",
+            "aliases": [
+                "greet"
+            ],
+            "description": "Manage welcome messages for new members",
+            "syntax": "welcome <subcommand> (args)",
+            "example": "welcome view #joiner",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "welcome add",
+            "description": "Add a welcome message to a channel",
+            "syntax": "welcome add <#channel> [message|embed script]",
+            "example": "welcome add #gate hi {user.mention}",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "welcome remove",
+            "description": "Remove a welcome message from a channel",
+            "syntax": "welcome remove <#channel>",
+            "example": "welcome remove #gate",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "welcome list",
+            "description": "List all welcome messages",
+            "syntax": "welcome list",
+            "example": "welcome list",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "welcome clear",
+            "description": "Clear all welcome messages",
+            "syntax": "welcome clear",
+            "example": "welcome clear",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "welcome view",
+            "description": "View a welcome channel's set message",
+            "syntax": "welcome view <#channel>",
+            "example": "welcome view #joiner",
+            "permissions": "MANAGE_GUILD",
+            "module": "configuration"
+        },
+        {
+            "name": "json",
+            "description": "Returns all of the commands in a JSON file split by module and all",
+            "syntax": "json",
+            "example": "json",
+            "permissions": "BOT_OWNER",
+            "module": "developer"
+        },
+        {
+            "name": "unwhitelist",
+            "aliases": [],
+            "description": "Remove a server from the whitelist and leave the server",
+            "syntax": "unwhitelist <server id>",
+            "example": "unwhitelist 123456789012345678",
+            "permissions": "Bot owner",
+            "module": "developer"
+        },
+        {
+            "name": "whitelist",
+            "aliases": [
+                "wl"
+            ],
+            "description": "Whitelist a server",
+            "syntax": "whitelist <subcommands> (args)",
+            "example": "whitelist add @jordan (server_id)",
+            "permissions": "Bot owner",
+            "module": "developer"
+        },
+        {
+            "name": "whitelist add",
+            "description": "Add a whitelist to a user",
+            "syntax": "whitelist add <user> (server_id)",
+            "example": "whitelist add @jordan (server_id)",
+            "permissions": "ADMINISTRATOR",
+            "module": "developer"
+        },
+        {
+            "name": "avatar",
+            "aliases": [
+                "av"
+            ],
+            "description": "Get avatar of a member or yourself",
+            "syntax": "avatar <user>",
+            "example": "avatar @jordan",
+            "module": "information"
+        },
+        {
+            "name": "boosts",
+            "aliases": [
+                "none"
+            ],
+            "description": "Shows the server's boosts.",
+            "syntax": "boosts",
+            "example": "boosts",
+            "module": "information"
+        },
+        {
+            "name": "compress",
+            "description": "Compress an image attachment",
+            "syntax": "compress <attachment> (quality)",
+            "example": "compress saint.png 50",
+            "permissions": "N/A",
+            "module": "utility"
+        },
+        {
+            "name": "emoji",
+            "description": "Returns a large emoji or server emote",
+            "syntax": "emoji <emoji>",
+            "example": "emoji :smile: or emoji <:custom_emoji_name:123456789>",
+            "permissions": "SEND_MESSAGES",
+            "module": "utility"
+        },
+        {
+            "name": "invert",
+            "description": "Invert the colors of an image attachment",
+            "syntax": "invert <attachment>",
+            "example": "invert saint.png",
+            "permissions": "N/A",
+            "module": "utility"
+        },
+        {
+            "name": "inviteinfo",
+            "aliases": [
+                "ii"
+            ],
+            "description": "Fetches information about the provided invite link.",
+            "syntax": "inviteinfo <invite>",
+            "example": "inviteinfo saint",
+            "module": "information"
+        },
+        {
+            "name": "membercount",
+            "aliases": [
+                "mc",
+                "members"
+            ],
+            "description": "View server member count",
+            "syntax": "membercount",
+            "example": "membercount",
+            "module": "information"
+        },
+        {
+            "name": "roles",
+            "aliases": [
+                "rolelist"
+            ],
+            "description": "Displays a list of all roles in the server",
+            "syntax": "roles",
+            "example": "roles",
+            "module": "information"
+        },
+        {
+            "name": "serverinfo",
+            "aliases": [
+                "guildinfo",
+                "si",
+                "gi"
+            ],
+            "description": "Fetches information about the server.",
+            "permissions": "Everyone",
+            "module": "Information"
+        },
+        {
+            "name": "tiktok-download",
+            "aliases": [
+                "tiktok"
+            ],
+            "description": "Download and repost a TikTok video along with its stats",
+            "syntax": "tiktok-download <tiktok url>",
+            "example": "tiktok https://www.tiktok.com/@example/video/1234567890",
+            "permissions": "Everyone",
+            "module": "media"
+        },
+        {
+            "name": "userinfo",
+            "aliases": [
+                "whois",
+                "uinfo",
+                "info",
+                "ui"
+            ],
+            "description": "Fetches information about a user.",
+            "permissions": "Everyone",
+            "module": "Information"
+        }
+    ]
+}
